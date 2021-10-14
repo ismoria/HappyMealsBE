@@ -13,9 +13,12 @@ describe('AppController', () => {
   });
 
   describe('getHello', () => {
-    it('should return "Hello World!"', () => {
+    test('post order & get box', () => {
       const appController = app.get<AppController>(AppController);
-      expect(appController.getHello()).toBe('Hello World!');
+      const qrStr = appController.postOrder({ order: [1, 2, 3] });
+      //expect(qr).toBe(String);
+      const box = appController.getOrder({ qrStr: qrStr });
+      //expect(box).toBe(Number);
     });
   });
 });
