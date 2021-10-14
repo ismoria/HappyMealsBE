@@ -5,7 +5,6 @@ import { QR } from './box';
 
 @Controller()
 export class AppController {
-  private static currentId = 0;
   constructor(private readonly appService: AppService) {}
 
   @Post()
